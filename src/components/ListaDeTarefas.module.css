@@ -1,0 +1,31 @@
+.container_list {
+   min-height: 40vh;
+}
+
+.list_itens {
+   margin: 0 auto;
+   margin-bottom: 1rem;
+   max-width: 300px;
+}
+
+.list_itens h4 {
+   color: rgb(0, 0, 0);
+   font-size: 22px;
+   font-weight: 700;
+   margin-bottom: 0;
+}
+.baixa {
+   color: rgb(145, 130, 1);
+   font-size: 14px;
+   font-weight: bold;
+}
+.media {
+   color: rgb(167, 4, 231);
+   font-size: 15px;
+   font-weight: bold;
+}
+.alta {
+   color: rgb(231, 4, 4);
+   font-size: 16px;
+   font-weight: bold;
+}
