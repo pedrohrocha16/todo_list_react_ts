@@ -40,7 +40,7 @@ const Form = ({ btnText, listaDeTarefas, setListaDeTarefas }: Props) => {
    return (
       <form className={styles.form} onSubmit={addTarefa}>
          <label>Título:
-            <input type="text" placeholder='nome da tarefa' value={title} name='title' onChange={handleChange} />
+            <input type="text" placeholder='nome da tarefa' value={title} name='title' onChange={handleChange} maxLength={15}/>
          </label>
          <label>Prioridade:
             <select name="select" id="select" value={priority} onChange={handleSelect}>

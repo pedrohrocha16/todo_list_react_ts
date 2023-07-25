@@ -13,9 +13,9 @@ select {
    border-radius: 2px;
    display: flex;
    flex-direction: column;
-   margin-bottom: 1.2rem;
-   margin-top: 1rem;
-   height: 23px;
+   margin-bottom: 1rem;
+   margin-top: 0.5rem;
+   height: 22px;
    padding: 3px;
    width: 200px;
 }
@@ -31,8 +31,16 @@ label:first-child {
 }
 
 button {
+   background-color: rgb(0 139 60);
    border-radius: 10px;
    border: 1px solid rgb(76, 158, 0);
+   color: white;
+   cursor: pointer;
+   font-size: 15px;
    height: 35px;
+   transition: .8s;
    width: 180px;
+}
+button:hover {
+   background-color: rgb(0 157 68);
 }
