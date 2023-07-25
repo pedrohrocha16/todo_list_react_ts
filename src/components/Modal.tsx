@@ -10,6 +10,7 @@ const Modal = ({ children }: Props) => {
   const fecharModal = (e: React.MouseEvent): void => {
     const modal = document.querySelector("#modal")
     modal!.classList.add("hide")
+    console.log(e)
   }
 
 
