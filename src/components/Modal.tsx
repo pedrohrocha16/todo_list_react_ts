@@ -1,5 +1,5 @@
 import styles from './Modal.module.css'
-import {CgCloseO} from 'react-icons/cg'
+import { CgCloseO } from 'react-icons/cg'
 
 type Props = {
   children: React.ReactNode
@@ -18,7 +18,7 @@ const Modal = ({ children }: Props) => {
       <div className={styles.fade} onClick={fecharModal}></div>
       <div className={styles.modal}>
         <div className={styles.button}>
-          <i><CgCloseO onClick={fecharModal}/></i>
+          <i><CgCloseO onClick={fecharModal} /></i>
         </div>
         <h2>Texto Modal</h2>
         {children}
