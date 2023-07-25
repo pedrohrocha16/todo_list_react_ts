@@ -15,13 +15,13 @@ const Modal = ({ children }: Props) => {
 
 
   return (
-    <div id='modal'>
+    <div id='modal' className="hide">
       <div className={styles.fade} onClick={fecharModal}></div>
       <div className={styles.modal}>
         <div className={styles.button}>
           <i><CgCloseO onClick={fecharModal} /></i>
         </div>
-        <h2>Texto Modal</h2>
+        <h2>Editar Tarefa</h2>
         {children}
       </div>
     </div>

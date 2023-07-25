@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, useState } from 'react'
+import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
 import styles from './Form.module.css'
 import { ITarefas } from './interfaces/Tarefas'
 
@@ -6,12 +6,23 @@ type Props = {
    btnText: string
    listaDeTarefas: ITarefas[]
    setListaDeTarefas: React.Dispatch<React.SetStateAction<ITarefas[]>>
+   tarefa?: ITarefas | null
+   handleUpdate?(id: number, title: string, priority: string): void
 }
 
-const Form = ({ btnText, listaDeTarefas, setListaDeTarefas }: Props) => {
+const Form = ({ btnText, listaDeTarefas, setListaDeTarefas, tarefa, handleUpdate }: Props) => {
 
+   const [id, setId] = useState<number>(0)
    const [title, setTitle] = useState<string>("")
    const [priority, setPriority] = useState<string>("baixa")
+
+   useEffect(() => {
+      if (tarefa) {
+         setId(tarefa.id)
+         setTitle(tarefa.title)
+         setPriority(tarefa.priority)
+      }
+   }, [tarefa])
 
    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
       setTitle(e.target.value)
@@ -22,25 +33,26 @@ const Form = ({ btnText, listaDeTarefas, setListaDeTarefas }: Props) => {
 
 
    const addTarefa = (e: FormEvent<HTMLFormElement>) => {
-
       e.preventDefault()
 
-      const id = Math.floor(Math.random() * 30000)
+      if (handleUpdate) {
 
-      const newListaTarefas = { id, title, priority }
+         handleUpdate(id, title, priority)
 
-      if (title.length == 0) {
-         return
-      } else {
+      } else if (title.length > 0) {
+         const id = Math.floor(Math.random() * 30000)
+
+         const newListaTarefas = { id, title, priority }
          setListaDeTarefas([...listaDeTarefas, newListaTarefas])
          setTitle("")
       }
    }
 
+
    return (
       <form className={styles.form} onSubmit={addTarefa}>
          <label>Título:
-            <input type="text" placeholder='nome da tarefa' value={title} name='title' onChange={handleChange} maxLength={15}/>
+            <input type="text" placeholder='nome da tarefa' value={title} name='title' onChange={handleChange} maxLength={15} />
          </label>
          <label>Prioridade:
             <select name="select" id="select" value={priority} onChange={handleSelect}>
@@ -50,9 +62,8 @@ const Form = ({ btnText, listaDeTarefas, setListaDeTarefas }: Props) => {
             </select>
          </label>
          <button type="submit">{btnText}</button>
-         <hr />
       </form>
    )
-}
 
+}
 export default Form

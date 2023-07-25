@@ -9,13 +9,13 @@
 
 input,
 select {
-   border: 0.5px solid black;
+   border: none;
    border-radius: 2px;
    display: flex;
    flex-direction: column;
    margin-bottom: 1rem;
    margin-top: 0.5rem;
-   height: 22px;
+   height: 25px;
    padding: 3px;
    width: 200px;
 }
@@ -23,6 +23,7 @@ label {
    align-items: self-start;
    display: flex;
    flex-direction: column;
+   font-weight: bold;
    margin-bottom: 0.5rem;
 }
 
