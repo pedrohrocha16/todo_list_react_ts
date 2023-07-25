@@ -1,0 +1,44 @@
+.fade {
+   background: #000;
+   height: 100%;
+   margin: 0;
+   padding: 0;
+   opacity: 0.875;
+   position: absolute;
+   width: 100%;
+}
+
+.modal {
+   background-color: #fff;
+   border-radius: 10px;
+   color: black;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   height: 400px;
+   left: 0;
+   margin: 0 auto;
+   position: absolute;
+   right: 0;
+   text-align: center;
+   top: 25%;
+   width: 300px;
+   z-index: 1;
+}
+.button {
+   color: red;
+   cursor: pointer;
+   font-size: 28px;
+   left: 260px;
+   position: absolute;
+   top: 15px;
+}
+
+.modal h2 {
+   margin-bottom: 1rem;
+
+}
+
+.modal form {
+   width: 90%;
+}
